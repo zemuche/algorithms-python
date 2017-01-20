@@ -1,12 +1,11 @@
 def binsearchrecur(sequence, item, start=0, stop=None):
-    if len(sequence) == 0:
-        return False
     if stop is None:
         stop = len(sequence) - 1
     if start == stop and item == sequence[start]:
             return start
-    if sequence[start] > item or sequence[stop] < item:
+    if len(sequence) == 0 or sequence[start] > item or sequence[stop] < item:
         return False
+
     mid = (stop + start) // 2
     if item == sequence[mid]:
         return mid
